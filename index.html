@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="http://127.0.0.1:5500/style.css?_cacheOverride=1621418591644">
+  <link rel="stylesheet" href="./style.css">
+  <title>Pokemon Battle App</title>
+</head>
+<body>
+
+<!-- ############################### STARTING SCREEN ############################### -->
+  <div class="starting-screen">
+    <img src="./images/logo.svg2.png" alt="" srcset="">
+    <h1 class="title">BATTLE ARENA</h1>
+    <button id="starting-choice">Choose your POKEMON <span class="corner corner-ul"></span><span class="corner corner-ur"></span><span class="corner corner-dl"></span><span class="corner corner-dr"></span></button>
+  </div>
+
+<!-- ############################# PLAYER CHOICE SCREEN ############################# -->
+
+  <div class="player-choice">
+    <button id="battle">START BATTLE<span class="corner corner-ul"></span><span class="corner corner-ur"></span><span class="corner corner-dl"></span><span class="corner corner-dr"></span></button>
+    <h1 class="title">CHOOSE YOUR POKEMON</h1>
+    <div id="player-choice">
+      <span class="corner corner-ul"></span><span class="corner corner-ur"></span><span class="corner corner-dl"></span><span class="corner corner-dr"></span>
+      <H1 class="player-choice-text"></H1>
+      <div class="choice-box">
+        <img src="" alt="" srcset="" id="player-choice-img" class="player-choice-img">
+        <div id="player-choice-stats" class="player-choice-stats">
+      </div>
+      </div>
+    </div>
+    <div id="computer-choice">
+      <span class="corner corner-ul"></span><span class="corner corner-ur"></span><span class="corner corner-dl"></span><span class="corner corner-dr"></span>
+      <H1 class="computer-choice-text"></H1>
+      <div class="choice-box">
+        <img src="" alt="" srcset="" id="computer-choice-img" class="computer-choice-img">
+        <div id="computer-choice-stats" class="computer-choice-stats"></div>
+      </div>
+    </div>
+
+
+    <div class="pokemons">
+      <span class="corner corner-ul"></span><span class="corner corner-ur"></span><span class="corner corner-dl"></span><span class="corner corner-dr"></span>
+      <div class="pokemon">
+        <img src="./images/pikachu-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <p>PIKACHU</p>
+      </div>
+      <div class="pokemon">
+        <img src="./images/bulbasaur-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <p>BULBASAUR</p>
+      </div> 
+      <div class="pokemon"> 
+        <img src="./images/squirtle-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <p>SQUIRTLE</p>
+      </div>  
+      <div class="pokemon">
+        <img src="./images/snorlax-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <p>SNORLAX</p>
+      </div>  
+    </div>  
+  </div>
+<!-- ############################### BATTLE SCREEN ############################### -->
+
+  <div class="battle-screen">
+    <h1 class="title battle-title">POKEMON BATTLE</h1>
+    <h1 class="title vs1" id="vs1">PIKACHU</h1>
+    <h1 class="title vs2">vs</h1>
+    <h1 class="title vs3" id="vs3">BULBASAUR</h1>
+    <div class="computer-battle-poke">
+      <img id="computer-battle-img" src="./images/bulbasaur-px.png" alt="" srcset="">      
+      <img src="./images/circle-px.png" alt="" srcset="">
+    </div>
+    <div class="player-battle-poke">
+      <img id="player-battle-img" src="" alt="" srcset="">      
+      <img src="./images/circle-px.png" alt="" srcset="">
+    </div>
+    <div class="battle">
+      <div class="battle-info">
+        <h2>PLAYER 1:</h2>
+        <div class="stats-skills">
+          <div id="player-battle-stats" class="battle-stats">
+            <p>Health: <progress id="player-health" value="70" max="100"></progress></p>
+            <p>Magic: <span style="padding-left:16px"></span><progress id="player-magic" value="100" max="100"></progress></p>
+          </div>
+          <div id="player-battle-skills" class="battle-skills">
+            <button class="skill-button">skill 1</button>
+            <button class="skill-button">skill 2</button>
+            <button class="skill-button">skill 3</button>
+            <button class="skill-button">skill 4</button>
+          </div>
+        </div>
+      </div>
+      <div class="battle-information">
+        <p>PLAYER CHOOSES</p>
+        <p>SKILL NAME</p>
+        <p>player looses 40 magic</p>
+        <p>and deals 50 damage</p>
+      </div>
+      <div class="battle-info">
+        <h2>PLAYER 2:</h2>
+        <div class="stats-skills">
+          <div id="computer-battle-stats" class="battle-stats">
+            <p>Health: <progress id="computer-health" value="100" max="100"></progress></p>
+            <p>Magic:<span style="padding-left:16px"></span> <progress id="computer-magic" value="100" max="100"></progress></p>
+          </div>
+          <div id="computer-battle-skills" class="battle-skills">
+            <button class="skill-button">skill 1</button>
+            <button class="skill-button">skill 2</button>
+            <button class="skill-button">skill 3</button>
+            <button class="skill-button">skill 4</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./JS/pokemons.js"></script>
+  <script src="./JS/choice-screen.js"></script>
+  <script src="./JS/battle-screen.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

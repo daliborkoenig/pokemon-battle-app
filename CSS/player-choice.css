@@ -1,0 +1,120 @@
+.player-choice{
+  /* font-family: 'Paytone One', sans-serif; */
+  display: none;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.player-choice > h1{
+  position: absolute;
+  left: 200px;
+  color: #FFCC02;
+  -webkit-text-stroke: 4px #2773BA;  
+  font-size: 5em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(-2deg);
+}
+
+#player-choice{
+  padding: 30px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  grid-row: 4 / 6;
+  grid-column: 1 / 3;
+  box-shadow: inset 0 0 0 10px rgba(39, 115, 186, 0.5);
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.choice-box{
+  margin-top: 30px;
+  padding: 30px;
+  background: rgba(39, 115, 186, 0.5);
+  width: 100%;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 50px;
+}
+
+.choice-box img{
+  display: none;
+  width: 200px;
+}
+#computer-choice{
+  padding: 30px;
+  margin-right: 10px;
+  grid-row: 2 / 4;
+  grid-column: 5 / 7;
+  box-shadow: inset 0 0 0 10px rgba(39, 115, 186, 0.5);
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.player-choice-text,
+.computer-choice-text{
+  font-size: 1.4em;
+}
+
+.player-choice-stats,
+.computer-choice-stats{
+  /* border: 5px solid white; */
+  padding-left: 5px;
+  word-wrap: normal;
+  font-size: 1.1em;
+}
+
+.pokemons{
+  grid-column: 3/5;
+  grid-row: 3/5;
+  padding: 3%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 10px rgba(39, 115, 186, 0.5);
+  position: relative;
+}
+.pokemon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: url('images/pointer-2.png'), url('images/pointer.png');	
+}
+
+.pokemon p {
+  padding-top: 10%;
+  font-size: 1.5em;
+}
+
+.player-choice button {
+  display: none;
+  grid-row: 2/4;
+  grid-column: 1 / 3;
+  position: relative;
+  width: 350px;
+  height: 110px;
+  background-color: #FFCC02;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5em;
+  padding: 10px 30px 10px 30px;
+  margin-top: 150px;
+  margin-left: 150px;
+  cursor: url('images/pointer-2.png'), auto;	
+  line-height: 1.4;
+  box-shadow: inset 0 0 0 10px #2773BA;
+  outline: none;
+}
+.player-choice button:active{
+  border: 4px solid #2773BA;
+  transform: scale(0.99);
+}
+.player-choice button:focus{
+  border: 2px solid gray;
+  box-shadow: inset 0 0 0 10px #2773BA;
+}
