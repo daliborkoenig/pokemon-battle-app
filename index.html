@@ -46,19 +46,19 @@
     <div class="pokemons">
       <span class="corner corner-ul"></span><span class="corner corner-ur"></span><span class="corner corner-dl"></span><span class="corner corner-dr"></span>
       <div class="pokemon">
-        <img src="./images/pikachu-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <img src="./images/pikachu-px.png" alt="" width="100px" class="pikachu">
         <p>PIKACHU</p>
       </div>
       <div class="pokemon">
-        <img src="./images/bulbasaur-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <img src="./images/bulbasaur-px.png" alt="" width="100px" class="bulbasaur" >
         <p>BULBASAUR</p>
       </div> 
       <div class="pokemon"> 
-        <img src="./images/squirtle-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <img src="./images/squirtle-px.png" alt="" width="100px" class="squirtle" >
         <p>SQUIRTLE</p>
       </div>  
       <div class="pokemon">
-        <img src="./images/snorlax-px.png" alt="" width="100px" onclick="playerChoice(this)">
+        <img src="./images/snorlax-px.png" alt="" width="100px" class="snorlax" >
         <p>SNORLAX</p>
       </div>  
     </div>  
@@ -66,10 +66,33 @@
 <!-- ############################### BATTLE SCREEN ############################### -->
 
   <div class="battle-screen">
+
+    <div id="hide-skills"></div>
+
+<!-- CENTER SCREEN BATTLE INFO -->
+    <div id="battle-information">
+      <p>PLAYER CHOOSES</p>
+      <p>SKILL NAME</p>
+      <p>player looses 40 magic</p>
+      <p>and deals 50 damage</p>
+    </div>
+
+<!-- VS TITLES -->
     <h1 class="title battle-title">POKEMON BATTLE</h1>
     <h1 class="title vs1" id="vs1">PIKACHU</h1>
     <h1 class="title vs2">vs</h1>
     <h1 class="title vs3" id="vs3">BULBASAUR</h1>
+
+<!-- COIN TOSS -->
+    <div id="coin-toss">
+      <h2>Toss a coin to decide who goes first.</h2>
+      <div id="coin" onclick="coinToss()">
+        <div class="side-a"></div>
+        <div class="side-b"></div>
+      </div>
+    </div>
+    
+<!-- BATTLE POKEMONS -->
     <div class="computer-battle-poke">
       <img id="computer-battle-img" src="./images/bulbasaur-px.png" alt="" srcset="">      
       <img src="./images/circle-px.png" alt="" srcset="">
@@ -78,7 +101,11 @@
       <img id="player-battle-img" src="" alt="" srcset="">      
       <img src="./images/circle-px.png" alt="" srcset="">
     </div>
+
+<!-- BATTLE STATS / SKILLS  -->
     <div class="battle">
+
+<!-- PLAYER STATS / SKILLS / BUY SKILLS -->
       <div class="battle-info">
         <h2>PLAYER 1:</h2>
         <div class="stats-skills">
@@ -92,14 +119,20 @@
             <button class="skill-button">skill 3</button>
             <button class="skill-button">skill 4</button>
           </div>
+          <div id="buy-icons">
+            <div class="buy-icon-1">
+              <p>buy 10 HP</p>
+              <img src="./images/buy-health.png" alt="" srcset="" width="80px">
+            </div>
+            <div class="buy-icon-2">
+              <img src="./images/buy-magic.png" alt="" srcset="" width="80px">
+              <p>buy 10 MP</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="battle-information">
-        <p>PLAYER CHOOSES</p>
-        <p>SKILL NAME</p>
-        <p>player looses 40 magic</p>
-        <p>and deals 50 damage</p>
-      </div>
+
+<!-- COMPUTER STATS / SKILLS / BUY SKILLS -->
       <div class="battle-info">
         <h2>PLAYER 2:</h2>
         <div class="stats-skills">
@@ -117,8 +150,11 @@
       </div>
     </div>
   </div>
+
+  <script src="./JS/variables.js"></script>
   <script src="./JS/pokemons.js"></script>
   <script src="./JS/choice-screen.js"></script>
+  <script src="./JS/coin-toss.js"></script>
   <script src="./JS/battle-screen.js"></script>
   <script src="./index.js"></script>
 </body>

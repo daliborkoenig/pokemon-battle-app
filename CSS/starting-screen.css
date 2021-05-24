@@ -1,0 +1,88 @@
+.starting-screen{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.starting-screen img{
+  padding-top: 1%;
+  width: 55%;
+}
+
+.starting-screen h1{
+  text-align: center;
+  /* font-family: '8BITWONDERNominal', sans-serif; */
+  color: #FFCC02;
+  -webkit-text-stroke: 4px #2773BA;
+  font-size: 5em;
+}
+
+.title {
+  transform: rotate(-6deg);
+  text-align: center;
+  margin: 100px 0 0 0;
+  font-size: 4em;
+  padding: 0px;
+  color: transparent;
+     text-shadow: 
+      5px -5px 0 #E23769,
+      1px -8px 0 #E9CD55,
+      0px -1px 0 #70B3EB,
+      -1px -2px 0 #70B3EB, 
+      -4px -4px 0 #70B3EB, 
+      -6px -6px 0 #70B3EB, 
+      -8px -8px 0 #70B3EB, 
+      -10px -10px 0 #70B3EB, 
+      -12px -12px 0 #70B3EB, 
+      -14px -14px 0 #70B3EB, 
+      -16px -16px 0 #70B3EB, 
+      -18px -18px 0 #70B3EB
+}
+
+.starting-screen button {
+  position: relative;
+  width: 350px;
+  height: 110px;
+  background-color: #FFCC02;
+  font-size: 1.5em;
+  padding: 10px 30px 10px 30px;
+  margin-top: 5%;
+  line-height: 1.4;
+  box-shadow: inset 0 0 0 10px #2773BA;
+  outline: none;
+}
+.starting-screen button:active{
+  border: 4px solid #2773BA;
+  transform: scale(0.99);
+}
+.starting-screen button:focus{
+  border: 2px solid gray;
+  box-shadow: inset 0 0 0 10px #2773BA;
+}
+.corner{
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #C3CFA0;
+}
+.corner-ul{
+  top: -2px;
+  left: -2px;
+}
+.corner-ur{
+  top: -2px;
+  right: -2px;
+}
+.corner-dl{
+  bottom: -2px;
+  left: -2px;
+}
+.corner-dr{
+  bottom: -2px;
+  right: -2px;
+}
+
