@@ -4,6 +4,7 @@ startingButton.addEventListener("mouseover", function(e){e.target.style.cursor =
 startingButton.addEventListener("click", function(e) {
   document.getElementsByClassName("starting-screen")[0].style.display = "none"
   document.getElementsByClassName("player-choice")[0].style.display = "grid"
+  body.style.background = "url(./images/starting-screen.jpeg)"
 });
 
 let pokemon = document.getElementsByClassName("pokemon")

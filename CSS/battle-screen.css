@@ -53,6 +53,10 @@
   left: 200px;
 }
 
+.circle{
+  margin-bottom: -50px;
+}
+
 .battle{
   padding: 20px;
   grid-column: 1/4;

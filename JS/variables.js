@@ -1,6 +1,7 @@
 let plPoke
 let cpPoke
 
+let body = document.getElementsByTagName("BODY")[0]
 
 let plHpProgress = document.getElementById("player-health")
 let plMagicProgress = document.getElementById("player-magic")

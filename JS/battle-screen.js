@@ -1,5 +1,4 @@
 function randomBattleBackground(){
-  let body = document.getElementsByTagName("BODY")[0]
   let random = Math.ceil(Math.random()*5)
   let randomBackground = `url(./images/background-${random}.jpg)`
 

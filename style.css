@@ -12,7 +12,7 @@
 body{
   width: 100vw;
   height: 100vh;
-  background: url(./images/starting-screen.jpeg);
+  background: url(./images/starting-screen.jpg);
   background-repeat: no-repeat !important; 
   background-position: bottom;
   background-size: cover !important;
