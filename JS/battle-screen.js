@@ -1,24 +1,8 @@
 function randomBattleBackground(){
   let body = document.getElementsByTagName("BODY")[0]
-  let randomBackground
   let random = Math.ceil(Math.random()*5)
-  switch (random) {
-    case 1:
-      randomBackground = "url(./images/background-1.jpg)"
-      break;
-    case 2:
-      randomBackground = "url(./images/background-2.jpg)"
-      break;
-    case 3:
-      randomBackground = "url(./images/background-3.jpg)"
-      break;
-    case 4:
-      randomBackground = "url(./images/background-4.jpg)"
-        break;
-    case 5:
-      randomBackground = "url(./images/background-5.jpg)"
-        break;
-  }
+  let randomBackground = `url(./images/background-${random}.jpg)`
+
   body.style.background = randomBackground
   let skillButtons = document.getElementsByClassName("skill-button")
   Array.from(skillButtons).forEach(item => {
@@ -29,23 +13,21 @@ function randomBattleBackground(){
 }
 
 function coinToss(){
-  let element = document.getElementById("coin")
   let flipResult = Math.random()
-  let hidden = document.getElementById("hide-skills")
-  let coinTossText = document.getElementById("coin-toss").childNodes[1]
   let ctWinner
   
-  if (flipResult <= 0.5){
+  // if (flipResult <= 0.5){
+  if (flipResult <= 1){
     element.classList.add("heads")
-    hidden.style.display = "none"
     ctWinner = "Player"
     setTimeout(() => {
       coinTossText.innerHTML = "Player goes first!"
       setTimeout(() => {
-        coinTossText.innerHTML = "Choose your attack!"
         element.style.display = "none"
-      }, 3000);
-    }, 3000);
+        hidden.style.display = "none"
+        coinTossText.innerHTML = "Choose your attack!"
+      }, 000);
+    }, 000);
   }
 
   else{
@@ -63,25 +45,27 @@ function coinToss(){
 
 function playerAttack(elem){
   if(elem.outerHTML.includes("one")){
-    eval(plPoke).attack(0,eval(cpPoke))
+    eval(plPoke).plAttack(0,eval(cpPoke))
   }
   else if(elem.outerHTML.includes("two")){
-    eval(plPoke).attack(1,eval(cpPoke))
+    eval(plPoke).plAttack(1,eval(cpPoke))
   }
   else if(elem.outerHTML.includes("three")){
-    eval(plPoke).attack(2,eval(cpPoke))
+    eval(plPoke).plAttack(2,eval(cpPoke))
   }
   else if(elem.outerHTML.includes("four")){
-    eval(plPoke).attack(3,eval(cpPoke))
+    eval(plPoke).plAttack(3,eval(cpPoke))
   }
   else if(elem.outerHTML.includes("five")){
-    eval(plPoke).attack(4,eval(cpPoke))
+    eval(plPoke).plAttack(4,eval(cpPoke))
   }
 }
 
 
 function computerAttack(){
-
+  let random = Math.floor(Math.random()*4)
+  console.log(random);
+  eval(cpPoke).cpAttack(random,eval(plPoke))
 }
 
 

@@ -49,27 +49,82 @@ class Pokemon{
   // let plMagicProgress = document.getElementById("player-magic")
   // let cpHpProgress = document.getElementById("computer-health")
   // let cpMagicProgress = document.getElementById("computer-magic")
-  attack(index,opponent){
+  plAttack(index,opponent){
+    coinTossText.style.display = "none"
+    battleText.style.display = "block"
     if(this.health <= 0){
-      console.log(`${this.name} can't attack because he is dead`);
+      battleText.innerHTML = `<p>${this.name.toUpperCase()} can't attack because he is dead</p>`;
     }
     else{
       if(this.magic < this.skills[index].magicreq){
-        console.log(`not enough magic, cannot launch attack!`);
+        battleText.innerHTML = `<p>${this.name.toUpperCase()} doesn't have enough magic to cast ${this.skills[index].name}, choose another skill or buy magic.</p>`;
       }
       else{
-        console.log(`${this.name} launched skill '${this.skills[index].name}' successfully!`)
-        console.log(`${opponent.name} got ${this.skills[index].damage} damage`);
-        opponent.health -= this.skills[index].damage
-        cpHpProgress.value -= this.skills[index].damage
-        this.magic -= this.skills[index].magicreq
-        plMagicProgress.value -= this.skills[index].magicreq
-        cpStats.innerHTML = eval(cpPoke).cpBattleStats()
-        plStats.innerHTML = eval(plPoke).plBattleStats()
-
-        if(opponent.health <= 0){
-          console.log(`${opponent.name} is killed!`);
-        }
+        battleTextOne.textContent = `${this.name.toUpperCase()} launched the skill '${this.skills[index].name}' successfully!`
+        setTimeout(() => {
+          battleTextTwo.textContent = `${opponent.name.toUpperCase()} received ${this.skills[index].damage} damage`;
+        }, 500);
+        setTimeout(() => {
+          battleTextThree.textContent = `${this.name.toUpperCase()} looses ${this.skills[index].magicreq} magic`;
+        }, 1000);
+        setTimeout(() => {
+          opponent.health -= this.skills[index].damage
+          cpHpProgress.value -= this.skills[index].damage
+          this.magic -= this.skills[index].magicreq
+          plMagicProgress.value -= this.skills[index].magicreq
+          cpStats.innerHTML = eval(cpPoke).cpBattleStats()
+          plStats.innerHTML = eval(plPoke).plBattleStats()
+          if(opponent.health <= 0){
+            battleTextFour.textContent = `${opponent.name.toUpperCase()} is killed!`;
+          }
+          else{
+            hidden.style.display = "grid"
+            battleTextFour.textContent = `it is ${opponent.name.toUpperCase()}'s turn!'`;
+            setTimeout(() => {
+              computerAttack()
+            }, 1000);
+          }
+        }, 1500);
+      }
+    }
+  }
+  cpAttack(index,opponent){
+    coinTossText.style.display = "none"
+    battleText.style.display = "block"
+    battleTextOne.textContent = ""
+    battleTextTwo.textContent = ""
+    battleTextThree.textContent = ""
+    battleTextFour.textContent = ""
+    if(this.health <= 0){
+      battleText.innerHTML = `<p>${this.name.toUpperCase()} can't attack because he is dead</p>`;
+    }
+    else{
+      if(this.magic < this.skills[index].magicreq){
+        battleText.innerHTML = `<p>${this.name.toUpperCase()} doesn't have enough magic to cast ${this.skills[index].name}, choose another skill or buy magic.</p>`;
+      }
+      else{
+        battleTextOne.textContent = `${this.name.toUpperCase()} launched the skill '${this.skills[index].name}' successfully!`
+        setTimeout(() => {
+          battleTextTwo.textContent = `${opponent.name.toUpperCase()} received ${this.skills[index].damage} damage`;
+        }, 500);
+        setTimeout(() => {
+          battleTextThree.textContent = `${this.name.toUpperCase()} looses ${this.skills[index].magicreq} magic`;
+        }, 1000);
+        setTimeout(() => {
+          opponent.health -= this.skills[index].damage
+          plHpProgress.value -= this.skills[index].damage
+          this.magic -= this.skills[index].magicreq
+          cpMagicProgress.value -= this.skills[index].magicreq
+          cpStats.innerHTML = eval(cpPoke).cpBattleStats()
+          plStats.innerHTML = eval(plPoke).plBattleStats()
+          if(opponent.health <= 0){
+            battleTextFour.textContent = `${opponent.name.toUpperCase()} is killed!`;
+          }
+          else{
+            battleTextFour = `it is ${opponent.name.toUpperCase()}'s turn!'`;
+          }
+        }, 1500);
+        hidden.style.display = "none"
       }
     }
   }

@@ -28,12 +28,15 @@ let cpVs = document.getElementById("vs3")
 
 let sideA = document.getElementsByClassName("side-a")[0]
 let sideB = document.getElementsByClassName("side-b")[0]
+let element = document.getElementById("coin")
+let hidden = document.getElementById("hide-skills")
+let coinTossText = document.getElementById("coin-toss").childNodes[1]
 
 let battleText = document.getElementById("battle-information")
 let battleTextOne = document.getElementById("battle-line-one")
-let battleTextTwo = document.getElementById("battle--line-two")
-let battleTextThree = document.getElementById("battle--line-three")
-let battleTextFour = document.getElementById("battle--line-four")
+let battleTextTwo = document.getElementById("battle-line-two")
+let battleTextThree = document.getElementById("battle-line-three")
+let battleTextFour = document.getElementById("battle-line-four")
 
 // let hidden = document.getElementById("hide-skills")
 // let coinTossText = document.getElementById("coin-toss").childNodes[1]
