@@ -71,6 +71,7 @@
 
 <!-- CENTER SCREEN BATTLE INFO -->
     <div id="battle-information">
+      <button id="go-again">Play Again<span class="corner corner-ul"></span><span class="corner corner-ur"></span><span class="corner corner-dl"></span><span class="corner corner-dr"></span></button>
       <p id="battle-line-one"></p>
       <p id="battle-line-two"></p>
       <p id="battle-line-three"></p>
@@ -94,10 +95,16 @@
     
 <!-- BATTLE POKEMONS -->
     <div class="computer-battle-poke">
+      <div id="cpHitBox">
+        <div class="dmgAnim">100</div>
+      </div>
       <img id="computer-battle-img" src="./images/bulbasaur-px.png" alt="" srcset="">      
       <img src="./images/circle-px.png" alt="" srcset="">
     </div>
     <div class="player-battle-poke">
+      <div id="plHitBox">
+        <div class="dmgAnim">100</div>
+      </div>
       <img id="player-battle-img" src="" alt="" srcset="">      
       <img src="./images/circle-px.png" alt="" srcset="">
     </div>

@@ -45,13 +45,92 @@
   position: relative;
 }
 
-.computer-battle-poke img:nth-child(1),
-.player-battle-poke img:nth-child(1){
+.computer-battle-poke #computer-battle-img,
+.player-battle-poke #player-battle-img{
   width: 200px;
   position: absolute;
   bottom: 100px;
   left: 200px;
 }
+
+/* ############ DAMAGE ANIMATION ############ */
+
+#cpHitBox{
+  display: none;
+  position: absolute;
+  left: 20%;
+  top: -10%;
+  background-color: #70B3EA;
+  width: 80px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+#plHitBox{
+  display: none;
+  position: absolute;
+  right: 35%;
+  top: -30%;
+  background-color: #70B3EA;
+  width: 80px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+.dmgAnim{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  color: #E45768;
+  background-color: #E9CD55;
+  font-weight: bolder;
+  width: 60px;
+  height: 40px;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+#plHitBox.player {
+  animation: hitPlayer 0.5s ease-out forwards;
+}
+#cpHitBox.opponent {
+  animation: hitOpponent 0.5s ease-out forwards;
+}
+
+@keyframes hitPlayer {
+  10% {transform: translate(10px,0px)}
+  10% {transform: translate(10px,10px)}
+  20% {transform: translate(20px,-20px)}
+  30% {transform: translate(30px,-20px)}
+  40% {transform: translate(30px,-30px)}
+  50% {transform: translate(40px,-30px)}
+  60% {transform: translate(40px,-40px)}
+  80% {transform: translate(50px,-50px)}
+  81% {transform: translate(50px,-50px) scale(2) }
+  90% {transform: translate(50px,-50px) scale(1)}
+  91% {transform: translate(50px,-50px) scale(2) }
+  100% {transform: translate(50px,-50px) scale(1.5)}
+}
+@keyframes hitOpponent {
+  10% {transform: translate(-10px,0px)}
+  10% {transform: translate(-10px,10px)}
+  20% {transform: translate(-20px,-20px)}
+  30% {transform: translate(-30px,-20px)}
+  40% {transform: translate(-30px,-30px)}
+  50% {transform: translate(-40px,-30px)}
+  60% {transform: translate(-40px,-40px)}
+  80% {transform: translate(-50px,-50px)}
+  81% {transform: translate(-50px,-50px) scale(2) }
+  90% {transform: translate(-50px,-50px) scale(1)}
+  91% {transform: translate(-50px,-50px) scale(2) }
+  100% {transform: translate(-50px,-50px) scale(1.5)}
+}
+
+/* --------------------------------------------------------------------- */
+
 
 .battle{
   padding: 20px;
@@ -134,17 +213,43 @@
 /* BATTLE INFORMATION DIV */
 
 #battle-information{
+  position: relative;
   grid-column: 2/3;
   grid-row: 3/4;
   display: none;
   background-color: rgba(255, 255, 255, 0.5);
-  height: 50%;
+  height: 60%;
   padding: 20px;
   box-shadow: inset 0 0 0 10px rgba(39, 115, 186, 0.5);
 }
 #battle-information p{
   padding-bottom: 10px
 }
+
+#battle-information button {
+  display: none;
+  position: absolute;
+  top: 95%;
+  left: 29%;
+  width: 240px;
+  height: 80px;
+  background-color: #FFCC02;
+  font-size: 1.1em;
+  padding: 10px 30px 10px 30px;
+  margin-top: 5%;
+  line-height: 1.4;
+  box-shadow: inset 0 0 0 10px #2773BA;
+  outline: none;
+}
+#battle-information button:active{
+  border: 4px solid #2773BA;
+  transform: scale(0.99);
+}
+#battle-information button:focus{
+  border: 2px solid gray;
+  box-shadow: inset 0 0 0 10px #2773BA;
+}
+
 /* HIDER FOR SKILL BUTTONS  */
 
 #hide-skills{
@@ -187,6 +292,8 @@ progress::-webkit-progress-value {
   flex-direction: column;
   justify-content: space-between;
 }
+
+
 
 /* ####################### COIN TOSS #################### */
 #coin-toss{
@@ -256,3 +363,18 @@ progress::-webkit-progress-value {
   from {transform: rotateY(0)}
   to {transform: rotateY(1980deg)}
 }
+
+/* #################### DEATH ANIMATION #################### */
+
+#computer-battle-img.dead {
+  animation: dead 0.5s ease-out forwards;
+}
+#player-battle-img.dead {
+  animation: dead 0.5s ease-out forwards;
+}
+
+@keyframes dead {
+  from {transform: rotateZ(0deg)}
+  to {transform: rotateZ(90deg)}
+}
+

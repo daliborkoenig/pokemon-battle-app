@@ -38,5 +38,12 @@ let battleTextTwo = document.getElementById("battle-line-two")
 let battleTextThree = document.getElementById("battle-line-three")
 let battleTextFour = document.getElementById("battle-line-four")
 
+let plHitAnimation = document.getElementById("plHitBox")
+let cpHitAnimation = document.getElementById("cpHitBox")
+let hitAnimationText = document.getElementsByClassName("dmgAnim")
+
+// let plPokeImg = document.getElementById("plPokemon")
+// let cpPokeImg = document.getElementById("cpPokemon")
+
 // let hidden = document.getElementById("hide-skills")
 // let coinTossText = document.getElementById("coin-toss").childNodes[1]

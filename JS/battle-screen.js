@@ -16,8 +16,8 @@ function coinToss(){
   let flipResult = Math.random()
   let ctWinner
   
-  // if (flipResult <= 0.5){
-  if (flipResult <= 1){
+  if (flipResult <= 0.5){
+  // if (flipResult <= 1){
     element.classList.add("heads")
     ctWinner = "Player"
     setTimeout(() => {
@@ -26,8 +26,8 @@ function coinToss(){
         element.style.display = "none"
         hidden.style.display = "none"
         coinTossText.innerHTML = "Choose your attack!"
-      }, 000);
-    }, 000);
+      }, 1000);
+    }, 3000);
   }
 
   else{
@@ -37,8 +37,9 @@ function coinToss(){
     setTimeout(() => {
       coinTossText.innerHTML = "Computer goes first!"
       setTimeout(() => {
+        element.style.display = "none"
         computerAttack()
-      }, 3000);
+      }, 1000);
     }, 3000);
   }
 }
@@ -64,8 +65,22 @@ function playerAttack(elem){
 
 function computerAttack(){
   let random = Math.floor(Math.random()*4)
-  console.log(random);
-  eval(cpPoke).cpAttack(random,eval(plPoke))
+  let minCost = JSON.parse(JSON.stringify(eval(cpPoke))).skills.sort(function (a,b) {
+    return a.magicreq - b.magicreq
+  })[1].magicreq
+  if(eval(cpPoke).magic < minCost && eval(cpPoke).health >=10){
+    eval(cpPoke).buyMP()
+    computerAttack()
+  }
+  else if(eval(cpPoke).magic < eval(cpPoke).skills[random].magicreq && eval(cpPoke).health >= 10){
+    computerAttack()
+  }
+  else if(eval(cpPoke).health < 10){
+    eval(cpPoke).cpAttack(4,eval(plPoke))
+  }
+  else{
+    eval(cpPoke).cpAttack(random,eval(plPoke))
+  }
 }
 
 
