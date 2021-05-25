@@ -21,20 +21,7 @@ function randomPoke(){
   }
 }
 
-function playerChoice(x){
-
-  // if(x.outerHTML.includes("pikachu")){
-  //   plPoke = "pikachu"
-  // }
-  // else if(x.outerHTML.includes("bulbasaur")){
-  //   plPoke = "bulbasaur"
-  // }
-  // else if(x.outerHTML.includes("squirtle")){
-  //   plPoke = "squirtle"
-  // }
-  // else if(x.outerHTML.includes("snorlax")){
-  //   plPoke = "snorlax"
-  // }
+function playerChoice(){
   playerChoice += ` ${plPoke.charAt(0).toUpperCase()}${plPoke.substr(1)}`
   plPokeImg.src = `./images/${plPoke}-px.png`
   plPokeImg.style.display = "block"

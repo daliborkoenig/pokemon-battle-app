@@ -50,7 +50,7 @@ function coinToss(){
 
   else{
     element.classList.add("tails")
-    hidden.style.display = "none"
+    // hidden.style.display = "none"
     ctWinner = "Computer"
     setTimeout(() => {
       coinTossText.innerHTML = "Computer goes first!"

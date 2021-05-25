@@ -73,9 +73,37 @@ class Pokemon{
       }
     }
   }
-  getMagic(num){
-    this.magic += num
-    console.log(`${this.name} got ${num} magic back`);
+  buyMP(){
+    if(this.health < 10){
+      console.log(`${this.name} doesn't have enough health to buy magic`);
+    }
+    else if(this.magic > this.maxMagic-10){
+      console.log(`${this.name} can't have more than ${this.maxMagic} magic`);
+    }
+    else{
+      this.health -= 10
+      plHpProgress.value = this.health
+      this.magic += 10
+      plMagicProgress.value = this.magic
+      plStats.innerHTML = eval(plPoke).plBattleStats()
+      console.log(`${this.name} got 10 magic back`);
+    }
+  }
+  buyHP(){
+    if(this.magic < 10){
+      console.log(`${this.name} doesn't have enough magic to buy health`);
+    }
+    else if(this.health > this.maxHealth-10){
+      console.log(`${this.name} can't have more than ${this.maxHealth} health`);
+    }
+    else{
+      this.health += 10
+      plHpProgress.value = this.health
+      this.magic -= 10
+      plMagicProgress.value = this.magic
+      plStats.innerHTML = eval(plPoke).plBattleStats()
+      console.log(`${this.name} got 10 health back`);
+    }
   }
 }
 

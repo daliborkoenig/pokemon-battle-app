@@ -40,10 +40,10 @@ let buyIcons = document.getElementById("buy-icons")
 Array.from(buyIcons.children).forEach(item => {
   item.addEventListener("click", function(){
     if (item.className == "buy-icon-1"){
-      buyHealth()
+      eval(plPoke).buyHP()
     }
     else if(item.className == "buy-icon-2"){
-      buyMagic()
+      eval(plPoke).buyMP()
     }
   })
   item.addEventListener("mouseover", function(){item.style.transform = "scale(1.2)"})
