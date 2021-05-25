@@ -53,85 +53,6 @@
   left: 200px;
 }
 
-/* ############ DAMAGE ANIMATION ############ */
-
-#cpHitBox{
-  display: none;
-  position: absolute;
-  left: 20%;
-  top: -10%;
-  background-color: #70B3EA;
-  width: 80px;
-  height: 60px;
-  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-}
-#plHitBox{
-  display: none;
-  position: absolute;
-  right: 35%;
-  top: -30%;
-  background-color: #70B3EA;
-  width: 80px;
-  height: 60px;
-  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-}
-
-.dmgAnim{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 10px;
-  top: 10px;
-  cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
-  color: #E45768;
-  background-color: #E9CD55;
-  font-weight: bolder;
-  width: 60px;
-  height: 40px;
-  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-}
-
-#plHitBox.player {
-  animation: hitPlayer 0.5s ease-out forwards;
-}
-#cpHitBox.opponent {
-  animation: hitOpponent 0.5s ease-out forwards;
-}
-
-@keyframes hitPlayer {
-  10% {transform: translate(10px,0px)}
-  10% {transform: translate(10px,10px)}
-  20% {transform: translate(20px,-20px)}
-  30% {transform: translate(30px,-20px)}
-  40% {transform: translate(30px,-30px)}
-  50% {transform: translate(40px,-30px)}
-  60% {transform: translate(40px,-40px)}
-  80% {transform: translate(50px,-50px)}
-  81% {transform: translate(50px,-50px) scale(2) }
-  90% {transform: translate(50px,-50px) scale(1)}
-  91% {transform: translate(50px,-50px) scale(2) }
-  100% {transform: translate(50px,-50px) scale(1.5)}
-}
-@keyframes hitOpponent {
-  10% {transform: translate(-10px,0px)}
-  10% {transform: translate(-10px,10px)}
-  20% {transform: translate(-20px,-20px)}
-  30% {transform: translate(-30px,-20px)}
-  40% {transform: translate(-30px,-30px)}
-  50% {transform: translate(-40px,-30px)}
-  60% {transform: translate(-40px,-40px)}
-  80% {transform: translate(-50px,-50px)}
-  81% {transform: translate(-50px,-50px) scale(2) }
-  90% {transform: translate(-50px,-50px) scale(1)}
-  91% {transform: translate(-50px,-50px) scale(2) }
-  100% {transform: translate(-50px,-50px) scale(1.5)}
-}
-
-/* --------------------------------------------------------------------- */
-
-
 .battle{
   padding: 20px;
   grid-column: 1/4;
@@ -378,3 +299,80 @@ progress::-webkit-progress-value {
   to {transform: rotateZ(90deg)}
 }
 
+/* ############ DAMAGE ANIMATION ############ */
+
+#cpHitBox{
+  display: none;
+  position: absolute;
+  left: 20%;
+  top: -10%;
+  background-color: #E45768;
+  width: 80px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+#plHitBox{
+  display: none;
+  position: absolute;
+  right: 35%;
+  top: -30%;
+  background-color: #E45768;
+  width: 80px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+.dmgAnim{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  color: #E45768;
+  background-color: #E9CD55;
+  font-weight: bolder;
+  width: 60px;
+  height: 40px;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+#plHitBox.player {
+  animation: hitPlayer 0.5s ease-out forwards;
+}
+#cpHitBox.opponent {
+  animation: hitOpponent 0.5s ease-out forwards;
+}
+
+@keyframes hitPlayer {
+  10% {transform: translate(10px,0px)}
+  10% {transform: translate(10px,10px)}
+  20% {transform: translate(20px,-20px)}
+  30% {transform: translate(30px,-20px)}
+  40% {transform: translate(30px,-30px)}
+  50% {transform: translate(40px,-30px)}
+  60% {transform: translate(40px,-40px)}
+  80% {transform: translate(50px,-50px)}
+  81% {transform: translate(50px,-50px) scale(2) }
+  90% {transform: translate(50px,-50px) scale(1)}
+  91% {transform: translate(50px,-50px) scale(2) }
+  100% {transform: translate(50px,-50px) scale(1.5)}
+}
+@keyframes hitOpponent {
+  10% {transform: translate(-10px,0px)}
+  10% {transform: translate(-10px,10px)}
+  20% {transform: translate(-20px,-20px)}
+  30% {transform: translate(-30px,-20px)}
+  40% {transform: translate(-30px,-30px)}
+  50% {transform: translate(-40px,-30px)}
+  60% {transform: translate(-40px,-40px)}
+  80% {transform: translate(-50px,-50px)}
+  81% {transform: translate(-50px,-50px) scale(2) }
+  90% {transform: translate(-50px,-50px) scale(1)}
+  91% {transform: translate(-50px,-50px) scale(2) }
+  100% {transform: translate(-50px,-50px) scale(1.5)}
+}
+
+/* --------------------------------------------------------------------- */
