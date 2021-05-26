@@ -148,7 +148,7 @@ class Pokemon{
     battleTextTwo.textContent = ""
     battleTextThree.textContent = ""
     battleTextFour.textContent = ""
-    if(this.health < 10){
+    if(this.health <= 10){
       battleTextOne.textContent = `${this.name.toUpperCase()} doesn't have enough health to buy magic`;
     }
     else if(this.magic > this.maxMagic-10){
