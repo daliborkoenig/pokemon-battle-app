@@ -35,7 +35,7 @@ function playerChoice(){
   plHpProgress.value = eval(plPoke).health
   plMagicProgress.max = eval(plPoke).maxMagic
   plMagicProgress.value = eval(plPoke).magic
-  sideA.style.backgroundImage = `url(../images/${plPoke}-px.png)`;
+  sideA.style.backgroundImage = `url(./images/${plPoke}-px.png)`;
 
   randomPoke()
 
@@ -55,7 +55,7 @@ function playerChoice(){
   choiceBox[0].style.display = "flex"
   choiceBox[1].style.display = "flex"
   document.getElementById("battle").style.display = "block"
-  sideB.style.backgroundImage = `url(../images/${cpPoke}-px.png)`;
+  sideB.style.backgroundImage = `url(./images/${cpPoke}-px.png)`;
 }
 
 
