@@ -26,11 +26,11 @@ class Pokemon{
     return `<p>Health: <progress id="computer-health" value="${this.health}" max="${this.maxHealth}">${this.health}</progress></p><p>Magic: <span style="padding-left:16px"></span><progress id="computer-magic" value="${this.magic}" max="${this.maxMagic}">${this.magic}</progress></p>`
   }
   plSkillList(){
-    return `<button class="skill-button one" onclick="playerAttack(this)">${this.skills[0].name}</button>
-    <button class="skill-button two" onclick="playerAttack(this)">${this.skills[1].name}</button>
-    <button class="skill-button three" onclick="playerAttack(this)">${this.skills[2].name}</button>
-    <button class="skill-button four" onclick="playerAttack(this)">${this.skills[3].name}</button>
-    <button class="skill-button five" onclick="playerAttack(this)">${this.skills[4].name}</button>`
+    return `<button class="skill-button one" onclick="playerAttack(this)" title="Power: ${this.skills[0].damage} / Magic cost: ${this.skills[0].magicreq}">${this.skills[0].name}</button>
+    <button class="skill-button two" onclick="playerAttack(this)" title="Power: ${this.skills[1].damage} / Magic cost: ${this.skills[1].magicreq}">${this.skills[1].name}</button>
+    <button class="skill-button three" onclick="playerAttack(this)" title="Power: ${this.skills[2].damage} / Magic cost: ${this.skills[2].magicreq}">${this.skills[2].name}</button>
+    <button class="skill-button four" onclick="playerAttack(this)" title="Power: ${this.skills[3].damage} / Magic cost: ${this.skills[3].magicreq}">${this.skills[3].name}</button>
+    <button class="skill-button five" onclick="playerAttack(this)" title="Power: ${this.skills[4].damage} / Magic cost: ${this.skills[4].magicreq}">${this.skills[4].name}</button>`
   }
   cpSkillList(){
     return `<button class="skill-button one">${this.skills[0].name}</button>
@@ -189,7 +189,6 @@ class AttackSkill{
   constructor(name,damage,magicreq){
     this.name = name
     this.damage = damage
-    this.magicreq = magicreq
     this.magicreq = magicreq
   }
 }

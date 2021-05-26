@@ -24,7 +24,7 @@ function randomPoke(){
 // ############## FUNCTION THAT CHOOSES THE FILLS HTML WITH PLAYER CHOICES #############
 
 function playerChoice(){
-  playerChoice += ` ${plPoke.charAt(0).toUpperCase()}${plPoke.substr(1)}`
+  plChoice = `You have chosen ${plPoke.charAt(0).toUpperCase()}${plPoke.substr(1)}`
   plPokeImg.src = `./images/${plPoke}-px.png`
   plPokeImg.style.display = "block"
   plBattleImg.src = `./images/${plPoke}-back-px.png`
@@ -41,7 +41,7 @@ function playerChoice(){
 
   randomPoke()
 
-  cpChoice += ` ${cpPoke.charAt(0).toUpperCase()}${cpPoke.substr(1)}`
+  cpChoice = `The Computer has chosen ${cpPoke.charAt(0).toUpperCase()}${cpPoke.substr(1)}`
   cpPokeImg.src = `./images/${cpPoke}-px.png`
   cpBattleImg.src = `./images/${cpPoke}-px.png`
   cpStatus.innerHTML = eval(cpPoke).showStatus();
@@ -64,7 +64,7 @@ function playerChoice(){
 
 
 function randomBattleBackground(){
-  let random = Math.ceil(Math.random()*5)
+  let random = Math.ceil(Math.random()*12)
   let randomBackground = `url(./images/background-${random}.jpg)`
 
   body.style.background = randomBackground
