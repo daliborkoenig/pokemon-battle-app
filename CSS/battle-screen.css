@@ -45,9 +45,15 @@
   position: relative;
 }
 
-.computer-battle-poke #computer-battle-img,
+.computer-battle-poke #computer-battle-img{
+  width: 150px;
+  position: absolute;
+  bottom: 50px;
+  left: 200px;
+}
+
 .player-battle-poke #player-battle-img{
-  width: 200px;
+  width: 250px;
   position: absolute;
   bottom: 100px;
   left: 200px;
@@ -55,6 +61,7 @@
 
 .circle{
   margin-bottom: -50px;
+  width: 550px;
 }
 
 .battle{
@@ -318,7 +325,7 @@ progress::-webkit-progress-value {
 #plHitBox{
   display: none;
   position: absolute;
-  right: 35%;
+  right: 30%;
   top: -30%;
   background-color: #E45768;
   width: 80px;
