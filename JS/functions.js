@@ -145,7 +145,7 @@ function computerAttack(){
   else if(eval(cpPoke).magic < eval(cpPoke).skills[random].magicreq && eval(cpPoke).health >= 10){
     computerAttack()
   }
-  else if(eval(cpPoke).health < 10){
+  else if(eval(cpPoke).health <= 10){
     eval(cpPoke).cpAttack(4,eval(plPoke))
   }
   else{

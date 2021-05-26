@@ -150,6 +150,8 @@ class Pokemon{
     battleTextFour.textContent = ""
     if(this.health <= 10){
       battleTextOne.textContent = `${this.name.toUpperCase()} doesn't have enough health to buy magic`;
+      battleTextTwo.textContent = `Player's turn. Choose a skill to use.`;
+      hidden.style.display = "none"
     }
     else if(this.magic > this.maxMagic-10){
       battleTextOne.textContent = `${this.name.toUpperCase()} can't have more than ${this.maxMagic} magic`;
