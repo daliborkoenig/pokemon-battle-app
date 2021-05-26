@@ -14,15 +14,9 @@ class Pokemon{
   }
   showStatus(){
     let skills = []
-    // console.log(`${this.name} status`);
-    // console.log(`health: ${this.health}`);
-    // console.log(`magic: ${this.magic}`);
-    // console.log(`skills: ${skills}`);
     for (let skill of this.skills){
       skills.push(skill.name)
     }
-    // console.log(skills);
-    // alert(this.health)
     return `<p>stats:</p><br><p>health: ${this.health}</p><p>magic: ${this.magic}</p> <br><p>skills:</p><br><p> ${skills[0]}</p><p> ${skills[1]}</p><p> ${skills[2]}</p><p> ${skills[3]}</p>`
   }
   plBattleStats(){
@@ -148,17 +142,17 @@ class Pokemon{
         }, 1500);
       }
     }
-    // console.log("POKE-health",eval(cpPoke).health);
-    // console.log("POKE-health progress",cpHpProgress);
-    // console.log("POKE-magic",eval(cpPoke).magic);
-    // console.log("POKE-magic progress",cpMagicProgress);
   }
   buyMP(){
+    battleTextOne.textContent = ""
+    battleTextTwo.textContent = ""
+    battleTextThree.textContent = ""
+    battleTextFour.textContent = ""
     if(this.health < 10){
-      console.log(`${this.name} doesn't have enough health to buy magic`);
+      battleTextOne.textContent = `${this.name.toUpperCase()} doesn't have enough health to buy magic`;
     }
     else if(this.magic > this.maxMagic-10){
-      console.log(`${this.name} can't have more than ${this.maxMagic} magic`);
+      battleTextOne.textContent = `${this.name.toUpperCase()} can't have more than ${this.maxMagic} magic`;
     }
     else{
       this.health -= 10
@@ -166,15 +160,19 @@ class Pokemon{
       this.magic += 10
       plMagicProgress.value = this.magic
       plStats.innerHTML = eval(plPoke).plBattleStats()
-      console.log(`${this.name} got 10 magic back`);
+      battleTextOne.textContent = `${this.name.toUpperCase()} got 10 magic back and lost 10 health`;
     }
   }
   buyHP(){
+    battleTextOne.textContent = ""
+    battleTextTwo.textContent = ""
+    battleTextThree.textContent = ""
+    battleTextFour.textContent = ""
     if(this.magic < 10){
-      console.log(`${this.name} doesn't have enough magic to buy health`);
+      battleTextOne.textContent = `${this.name.toUpperCase()} doesn't have enough magic to buy health`;
     }
     else if(this.health > this.maxHealth-10){
-      console.log(`${this.name} can't have more than ${this.maxHealth} health`);
+      battleTextOne.textContent = `${this.name.toUpperCase()} can't have more than ${this.maxHealth} health`;
     }
     else{
       this.health += 10
@@ -182,7 +180,7 @@ class Pokemon{
       this.magic -= 10
       plMagicProgress.value = this.magic
       plStats.innerHTML = eval(plPoke).plBattleStats()
-      console.log(`${this.name} got 10 health back`);
+      battleTextOne.textContent = `${this.name.toUpperCase()} got 10 health back`;
     }
   }
 }

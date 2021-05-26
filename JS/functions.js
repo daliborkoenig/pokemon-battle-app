@@ -1,3 +1,68 @@
+// ############## FUNCTION THAT CHOOSES THE COMPUTER POKEMON #############
+
+function randomPoke(){
+  let random = Math.ceil(Math.random()*4)
+  switch (random) {
+    case 1:
+      cpPoke = "pikachu"
+      break;
+    case 2:
+      cpPoke = "bulbasaur"
+      break;
+    case 3:
+      cpPoke = "squirtle"
+      break;
+    case 4:
+      cpPoke = "snorlax"
+        break;
+  }
+  if(cpPoke == plPoke){
+    randomPoke()
+  }
+}
+
+// ############## FUNCTION THAT CHOOSES THE FILLS HTML WITH PLAYER CHOICES #############
+
+function playerChoice(){
+  playerChoice += ` ${plPoke.charAt(0).toUpperCase()}${plPoke.substr(1)}`
+  plPokeImg.src = `./images/${plPoke}-px.png`
+  plPokeImg.style.display = "block"
+  plBattleImg.src = `./images/${plPoke}-back-px.png`
+  plChoiceStats.innerHTML = eval(plPoke).showStatus();
+  plChoiceText.innerHTML = plChoice
+  plStats.innerHTML = eval(plPoke).plBattleStats()
+  plSkills.innerHTML = eval(plPoke).plSkillList()
+  plVs.textContent = `${plPoke.toUpperCase()}`
+  plHpProgress.max = eval(plPoke).maxHealth
+  plHpProgress.value = eval(plPoke).health
+  plMagicProgress.max = eval(plPoke).maxMagic
+  plMagicProgress.value = eval(plPoke).magic
+  sideA.style.backgroundImage = `url(./images/${plPoke}-px.png)`;
+
+  randomPoke()
+
+  cpChoice += ` ${cpPoke.charAt(0).toUpperCase()}${cpPoke.substr(1)}`
+  cpPokeImg.src = `./images/${cpPoke}-px.png`
+  cpBattleImg.src = `./images/${cpPoke}-px.png`
+  cpStatus.innerHTML = eval(cpPoke).showStatus();
+  cpChoiceText.innerHTML = cpChoice
+  cpStats.innerHTML = eval(cpPoke).cpBattleStats()
+  cpSkills.innerHTML = eval(cpPoke).cpSkillList()
+  cpVs.textContent = `${cpPoke.toUpperCase()}`
+  cpHpProgress.max = eval(cpPoke).maxHealth
+  cpHpProgress.value = eval(cpPoke).health
+  cpMagicProgress.max = eval(cpPoke).maxMagic
+  cpMagicProgress.value = eval(cpPoke).magic
+  cpPokeImg.style.display = "block"
+  choiceBox[0].style.display = "flex"
+  choiceBox[1].style.display = "flex"
+  document.getElementById("battle").style.display = "block"
+  sideB.style.backgroundImage = `url(./images/${cpPoke}-px.png)`;
+}
+
+// ############## FUNCTION THAT PICKS A RANDOM BACKGROUND FOR BATTLE SCREEN #############
+
+
 function randomBattleBackground(){
   let random = Math.ceil(Math.random()*5)
   let randomBackground = `url(./images/background-${random}.jpg)`
@@ -10,6 +75,9 @@ function randomBattleBackground(){
     item.addEventListener("mouseout", function(){item.style.transform = "scale(1)"})
   });
 }
+
+// ############## COIN TOSS FUNCTION #############
+
 
 function coinToss(){
   let flipResult = Math.random()
@@ -43,6 +111,8 @@ function coinToss(){
   }
 }
 
+// ############## FUNCTION FOR PLAYER ATTACKS #############
+
 function playerAttack(elem){
   if(elem.outerHTML.includes("one")){
     eval(plPoke).plAttack(0,eval(cpPoke))
@@ -61,6 +131,7 @@ function playerAttack(elem){
   }
 }
 
+// ############## FUNCTION FOR COMPUTER ATTACKS ############
 
 function computerAttack(){
   let random = Math.floor(Math.random()*4)
@@ -81,6 +152,8 @@ function computerAttack(){
     eval(cpPoke).cpAttack(random,eval(plPoke))
   }
 }
+
+
 
 
 

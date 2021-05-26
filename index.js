@@ -1,3 +1,5 @@
+// ############## FIRST SCREEN BUTTON #############
+
 let startingButton = document.getElementById("starting-choice")
 
 startingButton.addEventListener("mouseover", function(e){e.target.style.cursor = "url('images/pointer-2.png'), auto"});
@@ -7,8 +9,9 @@ startingButton.addEventListener("click", function(e) {
   body.style.background = "url(./images/starting-screen.jpeg)"
 });
 
+// ############## CHOICE SCREEN POKEMON BUTTONS #############
+
 let pokemon = document.getElementsByClassName("pokemon")
-  
 Array.from(pokemon).forEach(item => {
   item.children[0].addEventListener("click", function(e){plPoke = e.target.className; playerChoice();})
   item.children[0].addEventListener("mouseover", function(e){e.target.style.transform = "scale(1.2)"})
@@ -16,10 +19,14 @@ Array.from(pokemon).forEach(item => {
   item.addEventListener("mouseout", function(e){e.target.style.transform = "scale(1)"})
 });
 
+// ############## CHOICE SCREEN START BATTLE BUTTON #############
+
 document.getElementById("battle").addEventListener("click", function() {
   document.getElementsByClassName("player-choice")[0].style.display = "none"
   document.getElementsByClassName("battle-screen")[0].style.display = "grid"
   randomBattleBackground()});
+
+// ############## BATTLE SCREEN BUY BUTTONS #############
 
 let buyIcons = document.getElementById("buy-icons")
 Array.from(buyIcons.children).forEach(item => {
@@ -35,6 +42,8 @@ Array.from(buyIcons.children).forEach(item => {
   item.addEventListener("mouseover", function(e){item.style.cursor = "url('images/pointer-2.png'), auto"})
   item.addEventListener("mouseout", function(e){item.style.transform = "scale(1)"})
 });
+
+// ############## BATTLE SCREEN GOAGAIN BUTTON #############
 
 let goAgainButton = document.getElementById("go-again")
 
